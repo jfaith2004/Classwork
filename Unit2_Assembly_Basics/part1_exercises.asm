@@ -23,7 +23,84 @@ asm_main:
         enter   0,0               ; setup routine
         pusha
 
-		; TODO: add code
+	; dump regs 1 
+        ; call print_nl
+
+        ; mov eax, 0 ; making EAX = 0
+        ; mov ah, 18 ; AH = 18 (base 10) 
+        ; mov al, 0BAH ; AL = 0xBA (base 16)
+        ; dump regs 2
+        ; call print_nl
+
+        ; mov eax, 0BEEFCAFEH
+        ; dump_regs 3
+
+        ; mov eax, 3
+        ; mov ebx, 4
+
+        ; add eax, ebx ; eax += ebx, eax = 7
+        ; dump regs 1 ; dump registers 
+
+        ; mov eax, 40 
+        ; mov ebx, 2 
+
+        ; dump regs 1 ;  dump registers 
+        ; call print_nl
+
+        ; add eax, ebx ; ecx += edx, ecx = 42
+        ; dump regs 2 
+
+        ; mov eax, 10
+        ; mov ebx, 4 
+
+        ; sub eax, ebx ; eax -= ebx (6)
+        ; dump regs 1 ;  dump registers
+        ; call print_nl
+
+        ; inc ebx 
+        ; dump regs 2
+
+        ; mov eax, 16
+        ; dump_regs 1 
+        ; call print_nl
+
+        ; mov ebx, 4 
+        ; dump_regs 2
+        ; call print_nl
+
+        ; sub eax, ebx ; eax -= ebx (12)
+        ; dump regs 3 ; dump registers
+        ; call print_nl
+
+        ; mov ecx, eax
+        ; inc ecx
+        ; dump regs 4 ; dump registers
+        ; call print_nl
+
+        ; given 12 multiply by 4
+        mov eax, 12 ; a
+        add eax, eax ; 2a
+        add eax, eax ; 2a + 2a = 4a
+
+        ; given 4 multiply by 12
+        ; 12 = 8 + 4
+        mov eax, 4 ; a
+        add eax, eax ; 2a
+        add eax, eax ; 2a + 2a = 4a
+        mov ebx, eax ; ebx = 4a
+
+        add eax, eax ; 4a + 4a = 8a
+
+        add eax, ebx ; 8a + 4a = 12a
+        dump_regs 1 ; dump registers
+
+        ; first try
+        ; mov ebx, 0
+
+        ; add ebx, eax
+        ; add ebx, eax
+        ; add ebx, eax
+        ; add ebx, eax
 
         popa
         mov     eax, 0            ; return back to C
